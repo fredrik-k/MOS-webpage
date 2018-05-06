@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Malmö Open Studios</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+    <link rel="manifest" href="images/icons/site.webmanifest">
+    <link rel="mask-icon" href="images/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel='stylesheet' type='text/css' href='src/style.css'>
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <base target="_blank"/>
+</head>
+<body>
+
+    <div id='map'></div>
+
+    <div id="place" class="place">
+      <div id="place-content" class="place-content">
+        <div id="place-image" class="place-image"></div>
+        <div id="place-text" class="place-text"></div>
+    </div>
+
+</div>
+
+<div id="menu-icon" class="menu-icon" onclick="on_menu_clicked()">
+    <img src="images/icons/MOS2018_logo_info_circle.png" width=120px>
+</div>
+
+<div id="hamburger-menu" class="hamburger-menu" onclick="on_menu_clicked()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+<div id="menu" class="menu" >
+    <div class="menu-content">
+        <span class="menu-close"><img src="images/icons/close.png" width=35px></span>
+        <button class="accordion">Interviews</button>
+        <div class="panel">
+            <div style="line-height: 1.4;padding-bottom: 20px">
+                Malmö Open Studios does in collaboration with <a href="http://www.konsten.net">konsten.net</a> present six of our participating artists through short interviews.
+            </div>
+            <div style="line-height: 1.4;padding-bottom: 10px">
+                    <img src="images/johan.jpg" width="100%" style="padding-bottom: 5px;">
+                    <a target="_blank"><font style="font-family:dinAlternateBold">Johan Lundqwist</font><br></a>
+                    <a><a style="color:#00966E;text-decoration:none;"><i class="fas fa-map-marker-alt fa-fw"></i></a> Flöjen<br></a>
+                    <a target="_blank" href="http://konsten.net/konstens-frageformular-84-johan-lundqwist/">
+                        Click here for the interview @ konsten.net<br><br></a>
+            </div>
+            <div style="line-height: 1.4;padding-bottom: 10px">
+                    <img src="images/nimar.jpg" width="100%" style="padding-bottom: 5px;">
+                    <a target="_blank"><font style="font-family:dinAlternateBold">Olof Nimar</font><br></a>
+                    <a><a style="color:#00966E;text-decoration:none;"><i class="fas fa-map-marker-alt fa-fw"></i></a> Flöjen<br></a>
+                    <a target="_blank" href="http://konsten.net/konstens-frageformular-82-olof-nimar/">
+                        Click here for the interview @ konsten.net<br><br></a>
+            </div>
+            <div style="line-height: 1.4;padding-bottom: 10px">
+                    <img src="images/melissa.jpg" width="100%" style="padding-bottom: 5px;">
+                    <a target="_blank"><font style="font-family:dinAlternateBold">Melissa Henderson </font><br></a>
+                    <a><a style="color:#00966E;text-decoration:none;"><i class="fas fa-map-marker-alt fa-fw"></i></a> Flöjen<br></a>
+                    <a target="_blank" href="http://konsten.net/konstens-frageformular-81-melissa-henderson/">
+                        Click here for the interview @ konsten.net<br><br></a>
+            </div>
+            <div style="line-height: 1.4;padding-bottom: 10px">
+                    <img src="images/matti.jpg" width="100%" style="padding-bottom: 5px;">
+                    <a target="_blank"><font style="font-family:dinAlternateBold">Matti Sumari </font><br></a>
+                    <a><a style="color:#00966E;text-decoration:none;"><i class="fas fa-map-marker-alt fa-fw"></i></a> Alta<br></a>
+                    <a target="_blank" href="http://konsten.net/konstens-frageformular-78-matti-sumari/">
+                        Click here for the interview @ konsten.net<br><br></a>
+            </div>
+            <div style="line-height: 1.4;padding-bottom: 10px">
+                    <img src="images/ida.jpg" width="100%" style="padding-bottom: 5px;">
+                    <a target="_blank"><font style="font-family:dinAlternateBold">Ida Persson </font><br></a>
+                    <a><a style="color:#00966E;text-decoration:none;"><i class="fas fa-map-marker-alt fa-fw"></i></a> Alta<br></a>
+                    <a target="_blank" href="http://konsten.net/konstens-frageformular-77-ida-persson/">
+                        Click here for the interview @ konsten.net<br><br></a>
+            </div>
+            <div style="line-height: 1.4;padding-bottom: 10px">
+                    <img src="images/elin.jpg" width="100%" style="padding-bottom: 5px;">
+                    <a target="_blank"><font style="font-family:dinAlternateBold">Elin Bengtsson </font><br></a>
+                    <a><a style="color:#00966E;text-decoration:none;"><i class="fas fa-map-marker-alt fa-fw"></i></a> Flöjen<br></a>
+                    <a target="_blank" href="http://konsten.net/konstens-frageformular-75-elin-bengtsson/">
+                    Click here for the interview @ konsten.net<br></a>
+            </div>
+            <p> Keep an eye out for more interviews</p>
+        </div>
+        <button class="accordion">Happening</button>
+        <div class="panel">
+            <div style="padding-bottom: 10px"">
+            <p target="_blank"><font style="font-family:dinAlternateBold;margin-bottom: -10px">Malmöl - Artistic brewery club</font></p>
+            <a><a style="color:#00966E;text-decoration:none"><i class="fas fa-map-marker-alt fa-fw"></i></a> Celsius Projects 16 - 18<br></a>
+            <p>Anders S Solberg, Hedda H&oslash;rran, Karoline Sætre, Rannveig Jonsdottir, Simen Stenberg, Øyvind Novak Jenssen</p>
+            <p style="font-family:dinAlternateBold;font-size: 10pt;margin-top: -5px">Supported by Folkuniversitetet</p>
+            </div>
+            <div>
+            <p target="_blank"><font style="font-family:dinAlternateBold;margin-bottom: -10px">The City Sound Wave Project</font></p>
+            <a><a style="color:#00966E;text-decoration:none"><i class="fas fa-map-marker-alt fa-fw"></i></a> Celsius Projects 12 - 18<br></a>
+            <p>Yasmin Thomsen, Martin Bonde-Hansen, Russell Cannon, Mimmi Green</p>
+            <p style="font-family:dinAlternateBold;font-size: 10pt;margin-top: -5px">We are The City Sound Wave Project. We are exploring the intersection between the planned city and the lived city.
+            We are currently looking into the redevelopment of Norra Sorgenfri and the values and challenges associated with it.
+            At Malmö Open Studios we would like to have an open dialogue about people’s experiences of and expectations for the area. This will contribute towards a podcast capturing the voices of Norra Sorgenfri</p>
+            </div>
+        </div>
+        <button class="accordion">Shuttle Bus Service</button>
+        <div class="panel">
+            <div style="padding-bottom: 15px">
+            Malmö Open Studios are happy to offer a free hop-on hop-off shuttel bus service. Each bus takes 29 passengers. The busses will run on the schedule below.
+            </div>
+
+            <div class="total-wrapper">
+                <div class="fix-column">
+                    <div class="tbody">
+                        <div class="trow">
+                            <span>Ahlmansgatan 3</span>
+                        </div>
+                        <div class="trow">
+                            <span>Bragegatan 15</span>
+                        </div>
+                        <div class="trow">
+                            <span>Örnehuvuds väg 23</span>
+                        </div>
+                        <div class="trow">
+                            <span>Norbergsgatan 24</span>
+                        </div>
+                        <div class="trow">
+                            <span>Spånehusvägen 83</span>
+                        </div>
+                        <div class="trow">
+                            <span>Nobelvägen 125</span>
+                        </div>
+                        <div class="trow">
+                            <span>Celsiusgatan 40</span>
+                        </div>
+                        <div class="trow">
+                            <span>Celsiusgatan 29</span>
+                        </div>
+                        <div class="trow">
+                            <span>Södra Bulltoftavägen 51</span>
+                        </div>
+                        <div class="trow">
+                            <span>Borrgatan 3</span>
+                        </div>
+                        <div class="trow">
+                            <span>Davidshallsgatan 25A</span>
+                        </div>
+                        <div class="trow">
+                            <span>Fågelbacksgatan 33A</span>
+                        </div>
+                        <div class="trow">
+                            <span>Bus stop Solbacken</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rest-columns">
+                    <div class="tbody">
+                        <div class="nrow">
+                            <span>&nbsp;</span><span>12:30</span><span>13:13</span><span>13:55</span><span>&nbsp;</span><span>14:38</span><span>15:16</span><span>16:24</span><span>16:44</span><span>17:24</span><span>17:45</span><span>18:05</span>
+                        </div>
+                        <div class="nrow">
+                            <span>&nbsp;</span><span>12:34</span><span>13:17</span><span>13:59</span><span>&nbsp;</span><span>14:42</span><span>15:20</span><span>16:28</span><span>16:48</span><span>17:28</span><span>17:59</span><span>-</span>
+                        </div>
+                        <div class="nrow">
+                            <span>&nbsp;</span><span>12:39</span><span>13:22</span><span>14:04</span><span>&nbsp;</span><span>14:47</span><span>15:25</span><span>16:33</span><span>16:53</span><span>17:33</span><span>18:04</span><span>-</span>
+                        </div>
+                        <div class="nrow">
+                            <span>&nbsp;</span><span>12:45</span><span>13:28</span><span>14:10</span><span>&nbsp;</span><span>14:53</span><span>15:31</span><span>16:39</span><span>16:59</span><span>17:39</span><span>-</span><span>-</span>
+                        </div>
+                        <div class="nrow">
+                            <span>&nbsp;</span><span>12:52</span><span>13:35</span><span>14:17</span><span>15:25</span><span>15:45</span><span>16:25</span><span>16:46</span><span>17:06</span><span>17:45</span><span>-</span><span>-</span>
+                        </div>
+                        <div class="nrow">
+                            <span>&nbsp;</span><span>12:55</span><span>13:38</span><span>14:20</span><span>15:28</span><span>15:48</span><span>16:28</span><span>16:49</span><span>17:09</span><span>17:48</span><span>-</span><span>-</span>
+                        </div>
+                        <div class="nrow">
+                            <span>&nbsp;</span><span>12:58</span><span>13:41</span><span>14:23</span><span>15:31</span><span>15:51</span><span>16:31</span><span>16:52</span><span>17:12</span><span>17:51</span><span>18:13</span><span>18:15</span>
+                        </div>
+                        <div class="nrow">
+                            <span>&nbsp;</span><span>13:01</span><span>13:44</span><span>14:26</span><span>15:34</span><span>15:54</span><span>16:34</span><span>16:55</span><span>17:15</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+                        </div>
+                        <div class="nrow">
+                            <span>12:30</span><span>13:08</span><span>13:55</span><span>14:33</span><span>15:41</span><span>16:01</span><span>16:41</span><span>17:02</span><span>17:22</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+                        </div>
+                        <div class="nrow">
+                            <span>12:38</span><span>13:16</span><span>14:03</span><span>14:41</span><span>15:49</span><span>16:09</span><span>16:49</span><span>17:10</span><span>17:30</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+                        </div>
+                        <div class="nrow">
+                            <span>12:50</span><span>13:28</span><span>14:15</span><span>14:53</span><span>16:01</span><span>16:21</span><span>17:01</span><span>17:22</span><span>17:42</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+                        </div>
+                        <div class="nrow">
+                            <span>13:00</span><span>13:38</span><span>14:25</span><span>15:03</span><span>16:11</span><span>16:31</span><span>17:11</span><span>17:32</span><span>17:52</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+                        </div>
+                        <div class="nrow">
+                            <span>13:03</span><span>13:41</span><span>14:28</span><span>15:06</span><span>16:14</span><span>16:34</span><span>17:14</span><span>17:35</span><span>17:55</span><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="accordion">Auction</button>
+        <div class="panel">
+            <p><a href="http://www.altaartspace.org/">Alta Art Space</a> hosts an art auction to support <a href="https://solidaritetvarmer.se/">Solidaritet Värmer</a> who runs a 24h homeless shelter. The auction consists of donated artworks by artists participating in Malmö Open Studios. The artworks can be seen during the opening hours 12:00 - 18:00 and the auction will start at 18:00 May 5th.</p>
+
+            <p>Examples of artworks to be auctioned will be published here, while every piece will be posted at <a style="color:#00966E;text-decoration:none;" href="https://www.instagram.com/malmoopenstudios/"><i class="fab fa-instagram fa-fw"></i> </a> and <a style="color:#00966E;text-decoration:none;" href="https://www.facebook.com/malmoopenstudios/"><i class="fab fa-facebook-f fa-fw"></i></a></p>
+
+            <p style="font-family:dinAlternateBold;">
+                <a ><a style="color:#00966E;text-decoration:none;"><i class="fas fa-map-marker-alt fa-fw"></i></a> Alta Art Space</a><br>
+                Celsiusgatan 40<br>
+                212 14 Malmö
+            </p>
+            <p style="font-family:dinAlternateBold;">Examples of artwork up for auction</p>
+            <div style="line-height: 1.4;padding-bottom: 10px">
+                    <img src="images/maria.jpeg" width="100%" style="padding-bottom: 5px;">
+                    <a target="_blank"><font style="font-family:dinAlternateBold">Maria E Harrysson </font><br></a>
+                    <a><a style="color:#00966E;text-decoration:none;"><i class="fas fa-map-marker-alt fa-fw"></i></a> Flöjen<br></a>
+                    "Untitled" <br>
+                    Graphite on paper, 17 x 15 cm, 2017 <br>
+                    Starting bid 800 sek <br>
+            </div>
+            <div style="line-height: 1.4;padding-bottom: 10px">
+                    <img src="images/peter.jpeg" width="100%" style="padding-bottom: 5px;">
+                    <a target="_blank"><font style="font-family:dinAlternateBold">Peter Wallström </font><br></a>
+                    <a><a style="color:#00966E;text-decoration:none;"><i class="fas fa-map-marker-alt fa-fw"></i></a> ADDO<br></a>
+                    "Han var bara borta en stund" <br>
+                    Aquarelle on paper, 29,7 x 42 cm, 2018 <br>
+                    Starting bid 100 sek <br>
+            </div>
+            <div style="line-height: 1.4;padding-bottom: 10px">
+                    <img src="images/mimmi_auction.jpg" width="100%" style="padding-bottom: 5px;">
+                    <a target="_blank"><font style="font-family:dinAlternateBold">Mimmi Montán </font><br></a>
+                    <a><a style="color:#00966E;text-decoration:none;"><i class="fas fa-map-marker-alt fa-fw"></i></a> Kapellgatan 14 U4<br></a>
+                    "För Ljus" <br>
+                    Gesso, acrylic, molding paste on canvas, 116 x 89 cm, 2018 <br>
+                    Starting bid 500 sek <br>
+            </div>
+        </div>
+        <button class="accordion">About</button>
+        <div class="panel">
+            <p style="padding:10px 0px 20px 0px;margin:0px">Locally based artists welcome the public to meet the arts where it’s being produced <br><br>
+
+            To contribute with skills development and networking within Malmö’s art scene <br><br>
+
+            To establish a platform for new collaborations, development of artist practices and an increased interest in Malmö based artists amongst professionals in the art world </p>
+            <p style="font-family: dinAlternateBold;font-size: 14pt;color: #444"> Credits</p>
+
+            <div style="line-height: 1.4;">
+                <div style="padding-bottom: 5px;">
+                    <img src="images/rina.jpg" width="100%" >
+                    <div class="captionright" style="font-family: dinAlternateBold;font-size: 10pt">Photo: <a href="https://www.lensculture.com/rina-beldo">Rina Beldo</a>
+                    </div>
+                </div>
+                <a target="_blank" href="https://www.rinaeidelovaasen.com/">Rina Eide L&oslash;vaasen </a>
+                <a><br> Founder and Project Coordinator <br></a>
+                <a ><a style="color:#00966E;text-decoration:none;"><i class="fas fa-map-marker-alt fa-fw"></i></a> Borrgantans Ateljéförening</a>
+            </div>
+            <div style="padding-top: 5px;padding-bottom: 5px">
+                <a style="font-family: dinAlternateBold;font-size: 14pt;color: #444"> Also</a>
+            </div>
+
+            <div style="line-height: 1.4;margin-bottom: 10px">
+                        <a target="_blank">Fredrik Karlsson </a><a><br> Web Developer <br></a>
+                        <a ><a style="color:#00966E;text-decoration:none;">
+            </div>
+
+            <div style="line-height: 1.4;margin-bottom: 10px">
+                                <a target="_blank" href="http://www.andreasknag-danielsen.com">Andreas Knag-Danielsen </a><a><br> Web Designer <br></a>
+                                <a ><a style="color:#00966E;text-decoration:none;"><i class="fas fa-map-marker-alt fa-fw"></i></a> Flöjen</a>
+            </div>
+
+            <div style="line-height: 1.4;margin-bottom: 10px">
+                                    <a target="_blank" href="http://www.ingvildkaldal.com/">Ingvild Hovland Kaldal </a><a><br> Interview Coordinator <br></a>
+                                    <a ><a style="color:#00966E;text-decoration:none;"><i class="fas fa-map-marker-alt fa-fw"></i></a> Flöjen</a>
+            </div>
+
+            <div style="line-height: 1.4;margin-bottom: 10px">
+                                        <a target="_blank" href="http://juliaselin.com/">Julia Selin </a><a><br> Auction Coordinator <br></a>
+                                        <a ><a style="color:#00966E;text-decoration:none;"><i class="fas fa-map-marker-alt fa-fw"></i></a> Alta</a>
+            </div>
+        </div>
+        <button class="accordion">Contact</button>
+        <div style="font-size:10pt" class="panel" style="padding:0px">
+            <div style="margin-top:5px"></div>
+            <div><a style="color:#00966E;text-decoration:none;" href="https://www.instagram.com/malmoopenstudios/"><i class="fab fa-instagram fa-fw"></i> @malmoopenstudios</a></div>
+            <div><a style="color:#00966E;text-decoration:none;" href="https://www.facebook.com/malmoopenstudios/"><i class="fab fa-facebook-f fa-fw"></i> @malmoopenstudios</div>
+            <div><a style="color:#00966E;text-decoration:none;" href="mailto:malmoopenstudios@gmail.com"><i class="far fa-envelope fa-fw"></i> malmoopenstudios@gmail.com</a></div>
+            <div style="margin-bottom:5px"></div>
+        </div>
+        <div align="right" style="padding-right: 10px">
+            <font style="font-family:dinAlternateBold;font-size: 10pt">Sponsors<br></font>
+            <a href="http://konsten.net/"><img src="images/icons/konsten.png" width="30%" style="padding-top: 3px; padding-right: 10px"></a>
+            <a href="http://malmo.se/"><img src="images/icons/malmo_stad.jpg" width="10%" style="padding-top: 3px"></a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="src/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+@font-face {
+    font-family: 'dinAlternateBold';
+    src: url('/fonts/DIN_Alternate_Bold.woff2') format('woff2'), /* Super Modern Browsers */
+    url('/fonts/DIN_Alternate_Bold.woff') format('woff'), /* Pretty Modern Browsers */
+    url('/fonts/DIN_Alternate_Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: 'dinAlternate';
+    src: url('/fonts/DIN_Alternate.woff2') format('woff2'), /* Super Modern Browsers */
+    url('/fonts/DIN_Alternate.woff') format('woff'), /* Pretty Modern Browsers */
+    url('/fonts/DIN_Alternate.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+body { margin:0;
+ padding:0;
+ font-family: 'dinAlternate', sans-serif;
+}
+
+.hamburger-menu {
+    position: fixed;
+    top:20px;
+    right:20px;
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+}
+
+
+#map { position:absolute; top:0; bottom:0; width:100%; }
+/* The Modal (background) */
+.place {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
+
+/* Modal Content */
+.place-content {
+    box-shadow: 10px 10px 5px grey;
+    background-color: #fefefe;
+    margin: auto;
+    width: 80%;
+    height:80%;
+    line-height: 1.4;
+    max-width: 500px;
+    position: relative;
+    overflow: hidden;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    font-size:0;
+}
+
+/* The Close Button */
+.place-close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-weight: bold;
+    z-index: 3;
+}
+.place-image {
+    z-index: 2;
+}
+.place-text {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding-top: 10px;
+    padding-left: 5px;
+    position: relative;
+    overflow: auto;
+    align-self: flex-start;
+    text-align: top;
+    font-size:12pt;
+}
+
+.place-close:hover,
+.place-close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.place-heading {
+    font-size: 24pt;
+    color: #00966E;
+    font-family: 'dinAlternateBold', sans-serif;
+}
+
+a {
+    target:_blank;
+}
+
+a:link {
+    color: black;
+
+}
+a:visited {
+    color: black;
+}
+
+.menu {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.menu-content {
+    background-color: #fefefe;
+    box-shadow: 10px 10px 5px grey;
+    margin: auto;
+    padding: 30px 0px 5px 0px;
+    width: 80%;
+    max-height:80%;
+    max-width: 500px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-icon {
+    position: fixed;
+    top:20px;
+    left:20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.menu-close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 3;
+}
+.menu-close:hover,
+.menu-close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: #fefefe;
+    color: #444;
+    cursor: pointer;
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-size: 16pt;
+    font-family: 'dinAlternateBold', sans-serif;
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+    color: #00966E;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    height: 100%;
+    padding: 0 10px;
+    background-color: white;
+    display: none;
+    position: relative;
+    overflow: auto;
+}
+.alignleft {
+    float: left;
+}
+.alignright {
+    float: right;
+    padding-right: 15px;
+}
+.captionright {
+    float: right;
+    padding-right: 0px;
+}
+figure {
+    padding: 0px;
+}
+
+.mapboxgl-popup {
+    font-family: "dinAlternateBold";
+}
+
+.fix-column {
+    float: left;
+}
+.trow {
+    white-space: nowrap;
+}
+.trow > span {
+    display: inline-block;
+    width: 150px;
+    line-height: 30px;
+    height: 30px;
+    font-size: 8pt;
+    font-family: 'dinAlternateBold';
+}
+.nrow {
+    white-space: nowrap;
+    width: 480px;
+}
+.nrow > span {
+    display: inline-block;
+    width: 40px;
+    line-height: 30px;
+    height: 30px;
+    font-size: 8pt;
+    font-family: 'dinAlternate';
+}
+.tbody {
+    overflow-x: auto;
+    font-size: 8pt;
+}
+.fix-column > .tbody {
+    overflow: hidden;
+    /*padding-bottom: 50px;*/
+}
+
+.trow:nth-child(odd) {
+    background-color: #e4e4e4;
+    background-size: cover;
+}
+
+.nrow:nth-child(odd) {
+    background-color: #e4e4e4;
+    background-size: cover;
+}
+
+.total-wrapper {
+    padding-bottom: 15px;
+}
+.mapboxgl-user-location-dot {
+    background-color: #00966E;
+}
+
+.mapboxgl-user-location-dot::before {
+    background-color: #00966E;
+}
+
+.mapboxgl-ctrl-icon.mapboxgl-ctrl-geolocate.mapboxgl-ctrl-geolocate-active {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20viewBox%3D%270%200%2020%2020%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%3E%0D%0A%20%20%3Cpath%20style%3D%27fill%3A%2300966E%3B%27%20d%3D%27M10%204C9%204%209%205%209%205L9%205.1A5%205%200%200%200%205.1%209L5%209C5%209%204%209%204%2010%204%2011%205%2011%205%2011L5.1%2011A5%205%200%200%200%209%2014.9L9%2015C9%2015%209%2016%2010%2016%2011%2016%2011%2015%2011%2015L11%2014.9A5%205%200%200%200%2014.9%2011L15%2011C15%2011%2016%2011%2016%2010%2016%209%2015%209%2015%209L14.9%209A5%205%200%200%200%2011%205.1L11%205C11%205%2011%204%2010%204zM10%206.5A3.5%203.5%200%200%201%2013.5%2010%203.5%203.5%200%200%201%2010%2013.5%203.5%203.5%200%200%201%206.5%2010%203.5%203.5%200%200%201%2010%206.5zM10%208.3A1.8%201.8%200%200%200%208.3%2010%201.8%201.8%200%200%200%2010%2011.8%201.8%201.8%200%200%200%2011.8%2010%201.8%201.8%200%200%200%2010%208.3z%27%20%2F%3E%0D%0A%3C%2Fsvg%3E");
+}
